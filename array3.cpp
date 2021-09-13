@@ -6,7 +6,7 @@ int main()
 {
     char mainstr[10] = "chocolate";
     char substr[10] = "col";
-    int pos, i, j;
+    int i, j, flag = 0;
 
     cout << sizeof(mainstr) << endl;
     cout << sizeof(substr) << endl;
@@ -22,6 +22,11 @@ int main()
                 break;
         }
         if (j == strlen(substr))
+        {
+            flag = 1;
             cout << "matched at the position " << i << endl;
+        }
     }
+    if (!flag)
+        cout << "Unable to find the substring\n";
 }
