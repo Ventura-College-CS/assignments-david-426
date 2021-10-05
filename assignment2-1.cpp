@@ -12,6 +12,6 @@ int main()
     for (int i = 0; i < N; i++)
     {
         cout << *(ptr+i) << "\t"; //This calls the pointer's dereferenced value at the value i which starts from 0 and goes up to 9 for all the array values
-    }                             //(goes up by 4 bytes for each value to new address in the array)
+    }                             //(goes up by 8 bytes for each value to a new address in the double array)
     cout << endl;
 }
