@@ -85,5 +85,15 @@ class Stack
 
 int main()
 {
-    
+    int id;
+    string name;
+    double scores[MAX_SCORES];
+    Stack<Student, 5> students;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Enter the ID: ";
+        cin >> id;
+        cout << "Enter name: ";
+        
+    }
 }
