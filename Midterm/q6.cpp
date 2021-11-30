@@ -76,5 +76,29 @@ class StudentCompare
 
 int main()
 {
-    
+    int id;
+    string name;
+    double scores[MAX_SCORES];
+    Student pop_student;
+    priority_queue<Student, vector<Student>, StudentCompare> pq;
+    for (int i = 0; i < 5; i++) // done 5 times
+    {
+        cout << "Enter the ID: ";
+        cin >> id;
+        cout << "Enter name: ";
+        cin >> name;
+        for (int j = 0; j < MAX_SCORES; j++)
+        {
+            cout << "Enter Score " << j + 1 << ": ";
+            cin >> scores[j];
+        }
+        pq.push(Student(id, name, scores)); // pushing the students into the priority queue
+    }
+
+    while (!pq.empty())
+    {
+        pop_student = pq.top();
+        pop_student.printStudent();
+        pq.pop();
+    }
 }
