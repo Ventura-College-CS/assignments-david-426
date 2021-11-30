@@ -82,3 +82,8 @@ class Stack
             return pool.size();
         }
 };
+
+int main()
+{
+    
+}
