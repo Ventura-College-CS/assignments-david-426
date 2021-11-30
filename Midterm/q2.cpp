@@ -21,7 +21,7 @@ int main()
 
 	while (!pq.empty())
 	{
-		cout << "Poped Value : " << pq.top() << endl;
+		cout << "Popped Value : " << pq.top() << endl;
 		pq.pop();
 	}
 }
