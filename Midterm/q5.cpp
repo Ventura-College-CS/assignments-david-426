@@ -110,4 +110,13 @@ int main()
         }
         students.push(Student(id, name, scores)); // generating a student object and passing it into the stack
     }
+
+    cout << "Stack size: " << students.size() << endl;
+
+    while (!students.isEmpty())
+    {
+        Student spop = students.topEl();
+        students.pop();
+        spop.printStudent();
+    }
 }
