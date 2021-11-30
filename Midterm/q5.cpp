@@ -63,7 +63,7 @@ class Stack
         {
             pool.push_back(el);
         }
-        t pop()
+        T pop()
         {
             T el = pool.back();
             pool.pop_back();
