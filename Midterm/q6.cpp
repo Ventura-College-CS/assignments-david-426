@@ -94,7 +94,7 @@ int main()
         }
         pq.push(Student(id, name, scores)); // pushing the students into the priority queue
     }
-
+ 
     while (!pq.empty())
     {
         pop_student = pq.top();
