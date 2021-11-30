@@ -11,7 +11,7 @@ class Student
         string sname;
         double scores[MAX_SCORES];
     public:
-        Student(){}
+        Student(): sid(0), sname(){}
         Student(int i, string name, double *sc)
         {
             sid = i;
@@ -61,22 +61,24 @@ class Stack
         }
         void push(const T &el)
         {
-            
+            pool.push_back(el);
         }
         t pop()
         {
-
+            T el = pool.back();
+            pool.pop_back();
+            return el;
         }
-        T topEl()
+        T &topEl()
         {
-
+            return pool.back();
         }
         bool isEmpty()
         {
-
+            return pool.empty();
         }
         int size()
         {
-
+            return pool.size();
         }
 };
