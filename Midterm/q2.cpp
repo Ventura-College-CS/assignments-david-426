@@ -7,7 +7,7 @@ class MyCompareFunction
     public:
         int operator()(const int &lhs, const int &rhs)
         {
-            return lhs < rhs; // this returns the larger number
+            return lhs > rhs; // this returns the larger number
         }
 };
 
