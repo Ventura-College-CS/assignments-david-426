@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 const int MAX_SCORES = 3;
@@ -47,6 +48,13 @@ class Student
             for (int i = 0; i < MAX_SCORES; i++)
                 scores[i] = *(sc + i);
         }
+        void printStudent()
+        {
+            cout << "ID: " << sid << "\t" << "Name: " << sname << "\t";
+            for (int i = 0; i < MAX_SCORES; i++)
+                cout << scores[i] << "\t";
+            cout << endl;
+        }
 };
 
 template <class T, int capacity = 30>
@@ -89,11 +97,17 @@ int main()
     string name;
     double scores[MAX_SCORES];
     Stack<Student, 5> students;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++) // done 5 times
     {
         cout << "Enter the ID: ";
         cin >> id;
         cout << "Enter name: ";
-        
+        cin >> name;
+        for (int j = 0; j < MAX_SCORES; j++)
+        {
+            cout << "Enter Score " << j + 1 << ": ";
+            cin >> scores[j];
+        }
+        students.push(Student(id, name, scores)); // generating a student object and passing it into the stack
     }
 }
