@@ -53,6 +53,10 @@ int main()
         cin >> credit;
         *(ptr + i) = Course(id, name, credit);
     }
+    sortCourses(ptr, N);
+    cout << "Enter the ID of the course you wish to see the information about: ";
+    cin >> id;
+    binarySearch(ptr, id, 0, N-1).printCourse(); // getting a course and printing it's information
 }
 
 Course binarySearch(Course * const c, int target, int first, int last)
