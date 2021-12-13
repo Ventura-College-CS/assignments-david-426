@@ -33,3 +33,8 @@ class Course
             cout << "Course ID: " << cID << "  Course Name: " << cName << "  Course units:" << cCredit << endl; 
         }
 };
+
+int main()
+{
+    
+}
