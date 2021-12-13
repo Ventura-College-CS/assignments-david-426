@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string> // in order to have user input for string
 using namespace std;
 
 class Course
@@ -40,7 +40,7 @@ void sortCourses(Course * const, int);
 int main()
 {
     const int N = 10;
-    Course *ptr = new Course[N];
+    Course *ptr = new Course[N]; // allocating 10 course objects worth of memory for the pointer
     int id, credit;
     string name;
     for (int i = 0; i < N; i++)
@@ -63,7 +63,7 @@ Course binarySearch(Course * const c, int target, int first, int last)
 {
     int mid = (first + last) / 2;
     if (first > last)
-        throw domain_error("That ID doesn't exist in the list of courses.\n");
+        throw domain_error("That ID doesn't exist in the list of courses.\n"); // throws error if the id was unable to be found in the allocated memory
     if (target == (c+mid)->getID())
         return *(c+mid);
     else if (target < (c+mid)->getID())
