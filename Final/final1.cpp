@@ -30,13 +30,21 @@ class Course
         }
 };
 
-Course binarySearch(Course [], int);
+Course binarySearch(Course * const, int, int, int);
+void sortCourses(Course * const, int);
 
 int main()
 {
 
 }
 
-Course binarySearch(Course cor[], int target)
+Course binarySearch(Course c[], int target, int first, int last)
 {
+    int mid = (first + last) / 2;
+    if (target == c[mid].getID())
+        return c[mid];
+    else if (target < c[mid].getID())
+        return binarySearch(c, target, first, last - 1);
+    else
+        return binarySearch(c, target, first + 1, last);
 }
