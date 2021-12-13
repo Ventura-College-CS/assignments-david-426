@@ -86,4 +86,4 @@ int partition(Course * const ptr, int first, int last)
     }
     swap(*(ptr+i+1), *(ptr+last));
     return i + 1;
-}
+} 
