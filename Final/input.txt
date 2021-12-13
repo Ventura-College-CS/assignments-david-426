@@ -1,12 +1,12 @@
-1004 Calculus 5
-1002 Biology 3
-5004 Chemistry 5
-2468 Data_Structures 3
-2000 Java 3
-1256 Beginning_C++ 3
-9235 Biochemistry 5
-1100 Circuits 5
-2200 English_A 3
-1205 CSV15 3
+104 Calculus 5
+102 Biology 3
+504 Chemistry 5
+246 Data_Structures 3
+200 Java 3
+125 Beginning_C++ 3
+923 Biochemistry 5
+110 Circuits 5
+220 English_A 3
+125 CSV15 3
 
-these are the inputs I put in manually into question 1
+these are the inputs I put in manually into question 1 and 2
