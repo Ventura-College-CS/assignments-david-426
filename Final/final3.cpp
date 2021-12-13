@@ -1,9 +1,9 @@
 #include <iostream>
+#include "PostFix.h"
 using namespace std;
 
-int postFixExp();
 
 int main()
 {
-
+    cout << "Please Enter your postfix expression"
 }
