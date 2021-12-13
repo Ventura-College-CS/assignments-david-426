@@ -28,9 +28,13 @@ class Course
         {
             return cName;
         }
+        void printCourse()
+        {
+            cout << "Course ID: " << cID << "\tCourse Name: " << cName << "\t Course units:" << cCredit << endl; 
+        }
 };
 
-Course binarySearch(Course * const, int, int, int);
+Course binarySearch(Course [], int, int, int);
 void sortCourses(Course * const, int);
 
 int main()
@@ -47,4 +51,20 @@ Course binarySearch(Course c[], int target, int first, int last)
         return binarySearch(c, target, first, last - 1);
     else
         return binarySearch(c, target, first + 1, last);
+}
+
+void sortCourses(Course * const ptr, int N)
+{
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            if ((ptr + j)->getID() > (ptr + i)->getID())
+            {
+                Course temp = *(ptr + i);
+                *(ptr+i) = *(ptr+j); // puting the value in the memory address associated with j into the address associated with i
+                *(ptr+j) = temp;  // puting the value from the memory address associated with i that was saved into the temporary student struct variable into the memory address associated with j
+            }
+        }
+    }
 }
