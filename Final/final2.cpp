@@ -39,7 +39,27 @@ int partition(Course * const, int, int);
 
 int main()
 {
-
+    const int N = 10;
+    Course *ptr = new Course[N]; // allocating 10 course objects worth of memory for the pointer
+    int id, credit;
+    string name;
+    for (int i = 0; i < N; i++)
+    {
+        cout << "Enter the course ID: ";
+        cin >> id;
+        cout << "Enter the course name: ";
+        cin >> name;
+        cout << "Enter the course units: ";
+        cin >> credit;
+        *(ptr + i) = Course(id, name, credit);
+    }
+    cout << "Before sort:\n";
+    for (int i = 0; i < N; i++)
+        (ptr + i)->printCourse(); // printing the courses
+    qsort(ptr, 0, N-1); //qsort(0,9)
+    cout << "After sort:\n";
+    for (int i = 0; i < N; i++)
+        (ptr + i)->printCourse();// printing the sorted courses
 }
 
 void qsort(Course * const ptr, int first, int last)
@@ -58,9 +78,9 @@ int partition(Course * const ptr, int first, int last)
     int i = first - 1;
     for (int j = first; j < last; j++)
     {
-        if ((ptr+j)->getID() < pivot)
+        if ((ptr+j)->getID() < pivot) // checking the ids against each other
         {
-            ++i;
+            ++i; //incrementing i
             swap(*(ptr + i), *(ptr+j));
         }
     }
