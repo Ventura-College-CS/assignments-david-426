@@ -39,7 +39,20 @@ void sortCourses(Course * const, int);
 
 int main()
 {
-
+    const int N = 10;
+    Course *ptr = new Course[N];
+    int id, credit;
+    string name;
+    for (int i = 0; i < N; i++)
+    {
+        cout << "Enter the course ID: ";
+        cin >> id;
+        cout << "Enter the course name: ";
+        cin >> name;
+        cout << "Enter the course units: ";
+        cin >> credit;
+        *(ptr + i) = Course(id, name, credit);
+    }
 }
 
 Course binarySearch(Course * const c, int target, int first, int last)
