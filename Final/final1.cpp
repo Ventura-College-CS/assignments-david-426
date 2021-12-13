@@ -30,7 +30,13 @@ class Course
         }
 };
 
+Course binarySearch(Course [], int);
+
 int main()
 {
 
+}
+
+Course binarySearch(Course cor[], int target)
+{
 }
