@@ -7,4 +7,8 @@ int main()
 {
     string exp;
     cout << "Please Enter your postfix expression";
+    cin >> exp;
+    PostFixExp e1;
+    e1.setExpression(exp);
+    
 }
