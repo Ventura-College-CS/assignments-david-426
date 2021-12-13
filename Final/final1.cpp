@@ -42,12 +42,12 @@ int main()
 
 }
 
-Course binarySearch(Course c[], int target, int first, int last)
+Course binarySearch(Course * const c, int target, int first, int last)
 {
     int mid = (first + last) / 2;
-    if (target == c[mid].getID())
-        return c[mid];
-    else if (target < c[mid].getID())
+    if (target == (c+mid)->getID())
+        return *(c+mid);
+    else if (target < (c+mid)->getID())
         return binarySearch(c, target, first, last - 1);
     else
         return binarySearch(c, target, first + 1, last);
@@ -61,7 +61,7 @@ void sortCourses(Course * const ptr, int N)
         {
             if ((ptr + j)->getID() > (ptr + i)->getID())
             {
-                Course temp = *(ptr + i);
+                Course temp = *(ptr+i);
                 *(ptr+i) = *(ptr+j); // puting the value in the memory address associated with j into the address associated with i
                 *(ptr+j) = temp;  // puting the value from the memory address associated with i that was saved into the temporary student struct variable into the memory address associated with j
             }
