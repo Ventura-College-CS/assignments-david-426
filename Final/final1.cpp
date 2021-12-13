@@ -65,9 +65,9 @@ Course binarySearch(Course * const c, int target, int first, int last)
     if (target == (c+mid)->getID())
         return *(c+mid);
     else if (target < (c+mid)->getID())
-        return binarySearch(c, target, first, last - 1);
+        return binarySearch(c, target, first, mid - 1); // calls another sequence of binarySearch
     else
-        return binarySearch(c, target, first + 1, last);
+        return binarySearch(c, target, mid + 1, last); // calls another sequence of binarySearch
 }
 
 void sortCourses(Course * const ptr, int N)
