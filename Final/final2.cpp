@@ -68,8 +68,8 @@ void qsort(Course * const ptr, int first, int last)
     if (first >= last)
         return;
     pivot_idx = partition(ptr, first, last);
-    qsort(ptr, first, pivot_idx -1);
-    qsort(ptr, pivot_idx + 1, last);
+    qsort(ptr, first, pivot_idx -1);// to the left of the pivot index
+    qsort(ptr, pivot_idx + 1, last); // to the right of the pivot index
 }
 
 int partition(Course * const ptr, int first, int last)
