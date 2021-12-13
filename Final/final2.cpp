@@ -34,7 +34,36 @@ class Course
         }
 };
 
+void qsort(Course * const, int, int);
+int partition(Course * const, int, int);
+
 int main()
 {
-    
+
+}
+
+void qsort(Course * const ptr, int first, int last)
+{
+    int pivot_idx;
+    if (first >= last)
+        return;
+    pivot_idx = partition(ptr, first, last);
+    qsort(ptr, first, pivot_idx -1);
+    qsort(ptr, pivot_idx + 1, last);
+}
+
+int partition(Course * const ptr, int first, int last)
+{
+    int pivot = (ptr + last)->getID();
+    int i = first - 1;
+    for (int j = first; j < last; j++)
+    {
+        if ((ptr+j)->getID() < pivot)
+        {
+            ++i;
+            swap(*(ptr + i), *(ptr+j));
+        }
+    }
+    swap(*(ptr+i+1), *(ptr+last));
+    return i + 1;
 }
