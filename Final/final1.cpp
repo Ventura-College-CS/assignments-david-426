@@ -30,7 +30,7 @@ class Course
         }
         void printCourse()
         {
-            cout << "Course ID: " << cID << "\tCourse Name: " << cName << "\t Course units:" << cCredit << endl; 
+            cout << "Course ID: " << cID << "  Course Name: " << cName << "  Course units:" << cCredit << endl; 
         }
 };
 
@@ -62,6 +62,8 @@ int main()
 Course binarySearch(Course * const c, int target, int first, int last)
 {
     int mid = (first + last) / 2;
+    if (first > last)
+        throw domain_error("That ID doesn't exist in the list of courses.\n");
     if (target == (c+mid)->getID())
         return *(c+mid);
     else if (target < (c+mid)->getID())
